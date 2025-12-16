@@ -34,7 +34,8 @@ def _init_db():
                 date DATE NOT NULL,
                 FOREIGN KEY (habit_id) 
                     REFERENCES habits (id) 
-                    ON DELETE CASCADE
+                    ON DELETE CASCADE,
+                UNIQUE (habit_id, date)
             )
         """)
 
